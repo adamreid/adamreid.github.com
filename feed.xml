@@ -6,7 +6,7 @@
         <link rel="alternate" href="http://adamreid.ca/" />
         <link rel="self" href="http://adamreid.ca/feed.xml" type="application/atom+xml" />
         <id>http://adamreid.ca/</id>
-        <updated>2012-05-17T02:03:22Z</updated>
+        <updated>2012-05-17T02:16:32Z</updated>
         
         <author>
             <name>Adam Reid</name>
@@ -19,7 +19,7 @@
                 <title>Kickstarting Puppet on CentOS 4 / ES-4</title>
                 <link rel="alternate" href="http://adamreid.ca/2012/05/15/Kickstarting-Puppet-On-Centos4/" type="text/html" />
                 <id>http://adamreid.ca/2012/05/15/Kickstarting-Puppet-On-Centos4/</id>
-                <updated>2012-05-15T02:01:00Z</updated>
+                <updated>2012-05-15T02:16:00Z</updated>
                 
                 <summary type="html">This is a short post on how I got &lt;a href=&#34;http://puppetlabs.com&#34;&gt;Puppet&lt;/a&gt; working on &lt;a href=&#34;http://www.centos.org&#34;&gt;CentOS&lt;/a&gt; 4.8. Why would I want to do such a thing when there are pre-packaged RPMs available for Centos 5 or 6? Well the company I work for has a massive number of &lt;a href=&#34;http://www.redhat.com&#34;&gt;RedHat&lt;/a&gt; ES-4 U8 (RedHat ES-4 U8 ~ CentOS 4.8) systems deployed all over the world. I work as part of the &amp;quot;Software Build and Configuration&amp;quot; team and we are responsible for setting up systems for QA. Since we use ES-4U8 in production, we must use the same release in QA.</summary>
                 <content type="html">&lt;p&gt;This is a short post on how I got &lt;a href=&#34;http://puppetlabs.com&#34;&gt;Puppet&lt;/a&gt; working on &lt;a href=&#34;http://www.centos.org&#34;&gt;CentOS&lt;/a&gt; 4.8. Why would I want to do such a thing when there are pre-packaged RPMs available for Centos 5 or 6? Well the company I work for has a massive number of &lt;a href=&#34;http://www.redhat.com&#34;&gt;RedHat&lt;/a&gt; ES-4 U8 (RedHat ES-4 U8 ~ CentOS 4.8) systems deployed all over the world. I work as part of the &amp;quot;Software Build and Configuration&amp;quot; team and we are responsible for setting up systems for QA. Since we use ES-4U8 in production, we must use the same release in QA.&lt;/p&gt;
@@ -147,7 +147,7 @@ chvt 3
 # switch back to gui
 chvt 7
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And that&amp;#39;s it. That&amp;#39;s enough to get you a puppet client system on RedHat ES-4 U8 or CentoOS 4.8. In a later post I will review how to create a Vagrant_ image to test your puppet manifests with.&lt;/p&gt;
+&lt;p&gt;And that&amp;#39;s it. That&amp;#39;s enough to get you a puppet client system on RedHat ES-4 U8 or CentoOS 4.8. In a later post I will review how to create a &lt;a href=&#34;http://vagrantup.com&#34;&gt;Vagrant&lt;/a&gt; image to test your puppet manifests with.&lt;/p&gt;
 </content>
             </entry>
         
