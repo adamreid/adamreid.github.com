@@ -1,96 +1,399 @@
-<!DOCTYPE html>
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><meta name="description" content="Sporratic updates from Adam"><meta name="author" content="Adam Reid"><title>adamreid.ca | adamreid.ca</title><link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"><link href="assets/css/rst.css" rel="stylesheet" type="text/css"><link href="assets/css/code.css" rel="stylesheet" type="text/css"><link href="assets/css/colorbox.css" rel="stylesheet" type="text/css"><link href="assets/css/slides.css" rel="stylesheet" type="text/css"><link href="assets/css/theme.css" rel="stylesheet" type="text/css"><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml"></head><body>
+<!-- Menubar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
 
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
 
-<meta name="author" content="Adam Reid">
-<meta name="description" content="Personal site for Adam Reid">
-<meta name="generator" content="mynt v0.2.2">
+            <a class="brand" href=".">
+            adamreid.ca
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div class="nav-collapse collapse">
+                <ul class="nav"><li><a href="archive.html">Archives</a>
+            </li><li><a href="categories/index.html">Tags</a>
 
-<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
-
-<link rel="alternate" href="/feed.xml" type="application/atom+xml">
-
-<link rel="stylesheet" href="/assets/css/screen.css" type="text/css">
-<link rel="stylesheet" href="/assets/css/pygments.css" type="text/css">
-
-
-    
-    <title>Adam Reid</title>
-</head>
-
-<body>
-    <div id="container">
-        <div id="nav">
-            <ul>
-                <li><a href="/">Blog</a></li>
-                <li><a href="/archives/">Archives</a></li>
-                <li><a href="/feed.xml">Feed</a></li>
-            </ul>
-            
-            
-                <ul id="social">
-                    
-                    
-                    <li><a href="https://github.com/adamreid"><img src="/assets/images/social/github.png" width="16" height="16" alt="GitHub"></a></li>
-                    <li><a href="https://plus.google.com/104846165015405586049"><img src="/assets/images/social/google-plus.png" width="16" height="16" alt="Google+"></a></li>
-                    
-                    
-                    
-                    
-                </ul>
-            
-        </div>
-        
-        <div id="header">
-            <h1><a href="/">Adam Reid</a></h1>
-            
-        </div>
-        
-        <div id="content">
-            
-    
-        
-        <div class="item">
-            <div class="header">
-                <h1><a href="/2012/05/21/Kickstarting-Vagrant-On-Centos4/">Kickstarting a CentOS / RedHat 4 Vagrant Image</a></h1>
-                <h2>Monday, May 21, 2012 <span>&raquo;</span> <a href="/tags/Puppet/">Puppet</a>, <a href="/tags/Vagrant/">Vagrant</a></h2>
-            </div>
-            
-            <div class="body">
-                <p>In my <a href="http://adamreid.ca/2012/05/15/Kickstarting-Puppet-On-Centos4/">previous post</a> I explained one way to get <a href="http://puppetlabs.com/">puppet</a> running on CentOS 4 / RedHat ES-4 using a kickstart. Building from that kickstart, I am going to show how to set up a <a href="https://www.virtualbox.org/">VirtualBox</a> VM suitable for use with <a href="http://vagrantup.com/">Vagrant</a>. Although I focus on a dated distribution here, these instructions can be applied to other distributions pretty easily. The kickstart can only be used by distributions that support kickstart installations. That means any RedHat or CentOS and possibly others with modifications.</p>
-            </div>
-            
-            <div class="footer">
-                <p><a href="/2012/05/21/Kickstarting-Vagrant-On-Centos4/">Continue Reading</a></p>
-            </div>
-        </div>
-    
-        
-        <div class="item">
-            <div class="header">
-                <h1><a href="/2012/05/15/Kickstarting-Puppet-On-Centos4/">Kickstarting Puppet on CentOS 4 / ES-4</a></h1>
-                <h2>Tuesday, May 15, 2012 <span>&raquo;</span> <a href="/tags/Puppet/">Puppet</a></h2>
-            </div>
-            
-            <div class="body">
-                <p>This is a short post on how I got <a href="http://puppetlabs.com">Puppet</a> working on <a href="http://www.centos.org">CentOS</a> 4.8. Why would I want to do such a thing when there are pre-packaged RPMs available for Centos 5 or 6? Well the company I work for has a massive number of <a href="http://www.redhat.com">RedHat</a> ES-4 U8 (RedHat ES-4 U8 ~ CentOS 4.8) systems deployed all over the world. I work as part of the &quot;Software Build and Configuration&quot; team and we are responsible for setting up systems for QA. Since we use ES-4U8 in production, we must use the same release in QA.</p>
-            </div>
-            
-            <div class="footer">
-                <p><a href="/2012/05/15/Kickstarting-Puppet-On-Centos4/">Continue Reading</a></p>
-            </div>
-        </div>
-    
-    
-    
-
-        </div>
-        
-        <div id="footer">
-            <p>Copyright &copy; 2012 Adam Reid &ndash; powered by <a href="http://mynt.mirroredwhite.com/">mynt</a></p>
+                </li></ul><ul class="nav pull-right"></ul></div>
         </div>
     </div>
-</body>
-</html>
+</div>
+<!-- End of Menubar -->
+<div class="container-fluid" id="container-fluid">
+    <!--Body content-->
+    <div class="row-fluid">
+    <div class="span2"></div>
+    <div class="span8">
+    
+        <div class="postbox">
+        <h1><a href="posts/Kickstarting-Vagrant-On-Centos4.html">Kickstarting a CentOS / RedHat 4 Vagrant Image</a>
+        <small>  
+             Posted: <time class="published" datetime="2012-05-21T00:00:00">2012-05-21 00:00</time></small></h1>
+        <hr><p>In my <a href="http://adamreid.ca/2012/05/15/Kickstarting-Puppet-On-Centos4/">previous post</a> I explained one way to get <a href="http://puppetlabs.com/">puppet</a> running on CentOS 4 / RedHat ES-4 using a kickstart. Building from that kickstart, I am going to show how to set up a <a href="https://www.virtualbox.org/">VirtualBox</a> VM suitable for use with <a href="http://vagrantup.com/">Vagrant</a>. Although I focus on a dated distribution here, these instructions can be applied to other distributions pretty easily. The kickstart can only be used by distributions that support kickstart installations. That means any RedHat or CentOS and possibly others with modifications.</p>
+<p>If you don't know why you might want to use <a href="http://vagrantup.com/">Vagrant</a> I will briefly explain. Vagrant is a tool that combines virtualization via VirtualBox with configuration management via <a href="http://puppetlabs.com/">Puppet</a> and/or <a href="http://www.opscode.com/chef/">Chef</a> to let you create reproducible development environments. You write a <code>Vagrantfile</code> that tells vagrant what your machine should look like and what puppet/chef configurations to apply. This means you don't need to keep a lot of VM's around when they aren't being used. Instead you can re-create the machine with vagrant when you need it, and destroy it when you're done. It has some nice features such as automatic ssh forwarding, optional port forwarding of other services (http for example), and automatic folder sharing. This last one is really nice, as it lets you write an application on your PC with whatever tools you would normally use and automatically have the code available in a VM for testing.</p>
+<p>In this kickstart I don't provide Chef, although it can be added with <code>gem install chef --no-doc --no-ri</code> if you would like it to be included in your images.</p>
+<h3>The set up</h3>
+<p>For this to work you are going to need the following things on your PC. I will not go into the details of installing VirtualBox or Vagrant, they both have excellent documentation available.</p>
+<ul><li><a href="https://www.virtualbox.org/">VirtualBox</a></li>
+<li><a href="http://vagrantup.com/">Vagrant</a></li>
+<li>A terminal</li>
+<li>A CentOS / RedHat 4 DVD iso</li>
+<li>A web server, I use Python 2.7 and <code>python -m 'http.server'</code></li>
+</ul><p>When VirtualBox is installed, copy (or link), the <code>VBoxGuestAdditions.iso</code> file into a directory to work in. For linux hosts you can usually find it in <code>/usr/lib/virtualbox/additions</code>, for Mac OS hosts it will be in <code>/Applications/VirtualBox.app/MacOS/</code>. Grab a copy of the latest <a href="https://raw.github.com/adamreid/kickstarts/master/puppet-es4-vagrant-ks.cfg">kickstart</a> from github. Serve these files via http using your favourite web server. I
+use Python and it's <code>http.server</code> module for Python 2.7 or <code>SimpleHTTPServer</code> for versions &lt; 2.7.</p>
+<div class="code"><pre>areid <span class="nv">$ </span><span class="nb">cd</span> ~/kickstarts/puppet
+puppet <span class="nv">$ </span>ln -s /usr/lib/virtualbox/additions/VBoxGuestAdditions.iso .
+puppet <span class="nv">$ </span>wget https://raw.github.com/adamreid/kickstarts/master/puppet-es4-vagrant-ks.cfg
+puppet <span class="nv">$ </span>python -m <span class="s1">'http.server'</span>
+Serving HTTP on 0.0.0.0 port 8000 ...
+</pre></div>
+
+
+<h3>The kickstart</h3>
+<p>This kickstart is an extension of the <a href="http://adamreid.ca/2012/05/15/Kickstarting-Puppet-On-Centos4/">puppet-es4</a> with the addition of a few steps to ready it for <a href="http://vagrantup.com/">vagrant</a> and the disabling of a few services that I would consider unnecessary for the VM's intended purpose.</p>
+<p>Most changes here are to conform to the conventions outlined in the <a href="http://vagrantup.com/docs/base_boxes.html">Vagrant base box</a> documentation. Specifically:
+<em> The root password is changed to vagrant.
+</em> The vagrant user is added to the admin group.
+<em> The admin group is given passwordless sudo access.
+</em> The vagrant user's <code>.ssh/authorized_keys</code> file contains a known (insecure) key for pubkey authentication.
+* The VirtualBox guest additions are installed.</p>
+<p>A final step is then run to help keep the size of the exported vagrant box down. A file is created in <code>/tmp</code> and filled with 0's until the disk runs out of space, then is deleted. This step is optional. If you are doing repeated testing of the kickstart, this step should be commented out to save time.</p>
+<div class="code"><pre><span class="c"># Kickstart file for Puppet on CentOS 4/RedHat ES-4</span>
+<span class="c"># Tested on ES-4 U8 / CentOS 4.8</span>
+<span class="c"># May work on older enterprise 4 systems.</span>
+<span class="c">#</span>
+<span class="c"># Adam Reid</span>
+<span class="c"># http://github.com/adamreid/kickstarts/puppet-es4-ks.cfg</span>
+
+install
+cdrom
+lang en_US.UTF-8
+langsupport --default<span class="o">=</span>en_US.UTF-8 en_US.UTF-8
+keyboard us
+xconfig --card <span class="s2">"VESA driver (generic)"</span> --videoram 12288 --hsync 31.5-37.9 --vsync 50-70 --resolution 800x600 --depth 16
+network --device eth0 --bootproto dhcp
+rootpw vagrant
+firewall --disabled
+selinux --disabled
+authconfig --enableshadow --passalgo<span class="o">=</span>md5
+timezone --utc America/New_York
+bootloader --location<span class="o">=</span>mbr
+<span class="c"># The following is the partition information you requested</span>
+<span class="c"># Note that any partitions you deleted are not expressed</span>
+<span class="c"># here so unless you clear all partitions first, this is</span>
+<span class="c"># not guaranteed to work</span>
+clearpart --all --drives<span class="o">=</span>sda
+part /boot --fstype ext3 --size<span class="o">=</span>100 --ondisk<span class="o">=</span>sda
+part pv.2 --size<span class="o">=</span>0 --grow --ondisk<span class="o">=</span>sda
+volgroup VolGroup00 --pesize<span class="o">=</span>32768 pv.2
+logvol swap --fstype swap --name<span class="o">=</span>LogVol01 --vgname<span class="o">=</span>VolGroup00 --size<span class="o">=</span>512 --grow --maxsize<span class="o">=</span>1024
+logvol / --fstype ext3 --name<span class="o">=</span>LogVol00 --vgname<span class="o">=</span>VolGroup00 --size<span class="o">=</span>1024 --grow
+
+%packages
+lvm2
+kernel
+e2fsprogs
+grub
+
+<span class="c"># required to build ruby</span>
+<span class="c"># should be kept for gems that build native extensions.</span>
+automake
+gcc
+cpp
+glibc-devel
+glibc-headers
+glibc-kernheaders
+glibc
+glibc-common
+libgcc
+
+<span class="c"># required to build ruby bindings, can be removed after</span>
+zlib-devel
+openssl-devel
+readline-devel
+
+%post
+
+<span class="c"># Change to a vt to see progress</span>
+
+<span class="nb">exec</span> &lt; /dev/tty3 &gt; /dev/tty3
+chvt 3
+
+<span class="c"># redirect output to ks-post.log including stdout and stderr</span>
+<span class="o">(</span>
+    <span class="c">#######################################################</span>
+    <span class="c"># Build Ruby</span>
+    <span class="c">#######################################################</span>
+
+    <span class="c"># Keep it clean</span>
+    mkdir /tmp/ruby
+    <span class="nb">cd</span> /tmp/ruby
+
+    <span class="c"># autoconf 2.60 is required to build ruby</span>
+    wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.60.tar.gz
+    tar -xzf autoconf-2.60.tar.gz
+    <span class="nb">cd </span>autoconf-2.60
+    ./configure --prefix<span class="o">=</span>/usr <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
+    <span class="nb">cd</span> /tmp/ruby
+
+    <span class="c"># build ruby-1.8.7-p358</span>
+    wget http://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p358.tar.bz2
+    tar -xjf ruby-1.8.7-p358.tar.bz2
+    <span class="nb">cd </span>ruby-1.8.7-p358
+    autoconf
+    ./configure --prefix<span class="o">=</span>/usr <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
+    <span class="nb">cd</span> /tmp/ruby
+
+    <span class="c"># install ruby-gems 1.8.10</span>
+    wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.10.tgz
+    tar -xzf rubygems-1.8.10.tgz
+    <span class="nb">cd </span>rubygems-1.8.10
+    /usr/bin/ruby setup.rb
+
+    <span class="c"># clean up</span>
+    <span class="nb">cd</span> /
+    rm -rf /tmp/ruby
+
+    <span class="c">#######################################################</span>
+    <span class="c"># Install Puppet</span>
+    <span class="c">#######################################################</span>
+    gem install puppet --no-rdoc --no-ri
+
+    <span class="c"># add the puppet group</span>
+    groupadd puppet
+
+    <span class="c">#######################################################</span>
+    <span class="c"># Install VirtualBox Guest Additions</span>
+    <span class="c">#</span>
+    <span class="c"># Note: You will need to provide a copy of the</span>
+    <span class="c"># VirtualBoX Guest Addititons iso on a web server.</span>
+    <span class="c">#######################################################</span>
+    <span class="nb">cd</span> /tmp
+    wget http://192.168.1.3:8000/VBoxGuestAdditions.iso
+    mkdir /tmp/isomount
+    mount -t iso9660 -o loop /tmp/VBoxGuestAdditions.iso /tmp/isomount
+
+    /tmp/isomount/VBoxLinuxAdditions.run
+    umount isomount
+    rm VBoxGuestAdditions.iso
+
+    <span class="c">#######################################################</span>
+    <span class="c"># Turn off un-needed services</span>
+    <span class="c">#######################################################</span>
+    chkconfig sendmail off
+    chkconfig vbox-add-x11 off
+    chkconfig smartd off
+    chkconfig ntpd off
+    chkconfig cupsd off
+
+    <span class="c">#######################################################</span>
+    <span class="c"># Setup for Vagrant</span>
+    <span class="c">#######################################################</span>
+    groupadd admin
+    useradd -g admin vagrant
+    <span class="nb">echo</span> <span class="s1">'Defaults env_keep="SSH_AUTH_SOCK"'</span> &gt;&gt; /etc/sudoers
+    <span class="nb">echo</span> <span class="s1">'%admin    ALL=NOPASSWD: ALL'</span> &gt;&gt; /etc/sudoers
+
+    <span class="c"># Add vagrant insecure private key for key auth</span>
+    <span class="c"># Make your own if this is private.</span>
+    <span class="c"># See http://vagrantup.com/docs/base_boxes.html</span>
+    mkdir /home/vagrant/.ssh
+    <span class="nb">echo</span> <span class="s2">"ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key"</span> &gt; /home/vagrant/.ssh/authorized_keys
+
+    <span class="c"># Clean up unused disk space so compressed image is smaller.</span>
+    cat /dev/zero &gt; /tmp/zero.fill
+    rm /tmp/zero.fill
+
+    <span class="c">#######################################################</span>
+    <span class="c"># The system can now be packaged with </span>
+    <span class="c"># `vagrant package VMNAME`</span>
+    <span class="c">#######################################################</span>
+    <span class="nb">echo</span> <span class="s1">'You can now package this box with `vagrant package VMNAME`'</span>
+
+<span class="o">)</span> 2&gt;&amp;1 | /usr/bin/tee /root/ks-post.log
+
+<span class="c"># switch back to gui</span>
+chvt 7
+</pre></div>
+
+
+<h3>Creating the Vagrant Image</h3>
+<p>Now that the kickstart has been installed it is ready to be packaged as a vagrant base box.</p>
+<p>I named my base image <em>vagrant-es4</em> in VirtualBox, so when following this example make sure to replace my VM name with yours.</p>
+<div class="code"><pre>puppet <span class="nv">$ </span>vagrant package --base vagrant-es4
+puppet <span class="nv">$ </span>vagrant box add es4base package.box
+</pre></div>
+
+
+<p>The image is now ready for you to use in your own vagrant images. Create a new vagrant configuration to test the base image with.</p>
+<div class="code"><pre>puppet <span class="nv">$ </span><span class="nb">cd</span> ~/vms
+vms <span class="nv">$ </span>mkdir es4test
+vms <span class="nv">$ </span><span class="nb">cd </span>es4test
+vms <span class="nv">$ </span>vagrant init es4base
+vms <span class="nv">$ </span>vagrant up
+vms <span class="nv">$ </span>vagrant ssh
+</pre></div>
+
+
+<p>The last command <code>vagrant ssh</code> gives you shell access to the virtual machine you just created. If you look in the machines <code>/vagrant</code> directory you will notice that your <code>Vagrantfile</code> is there. This is a VirtualBox "shared folder" that is provided for you by vagrant. The directory it's sharing is the same directory that <code>vagrant init</code> was run inside of in the steps above. </p>
+<p>When developing an application you can see how this little convenience will make a big difference in testing your application in a virtual environment. You just create a <code>Vagrantfile</code> with the configuration you require, spin up the VM, and run your application from the shared folder. Keeping the <code>Vagrantfile</code> in source with your application will remind you to keep it up to date as the applications requirements change, and makes it easy for new developers to quickly set up a known-good environment to test in.</p>
+            
+    <p>
+
+        </p></div>
+        <div class="postbox">
+        <h1><a href="posts/Kickstarting-Puppet-On-Centos4.html">Kickstarting Puppet on CentOS 4 / ES-4</a>
+        <small>  
+             Posted: <time class="published" datetime="2012-05-15T00:00:00">2012-05-15 00:00</time></small></h1>
+        <hr><p>This is a short post on how I got <a href="http://puppetlabs.com">Puppet</a> working on <a href="http://www.centos.org">CentOS</a> 4.8. Why would I want to do such a thing when there are pre-packaged RPMs available for Centos 5 or 6? Well the company I work for has a massive number of <a href="http://www.redhat.com">RedHat</a> ES-4 U8 (RedHat ES-4 U8 ~ CentOS 4.8) systems deployed all over the world. I work as part of the "Software Build and Configuration" team and we are responsible for setting up systems for QA. Since we use ES-4U8 in production, we must use the same release in QA.</p>
+<p>One of the goals I've set for myself in my job is to make these QA systems disposable. When QA test these systems they sometimes require specific configuration or data changes to make sure feature X is working and doesn't break feature Y. You can't very well dispose of a system that takes you 1 or 2 days to manually configure, and that's where puppet comes in.</p>
+<p>Puppet (and Chef) allow you to describe the packages, attributes, and configurations that make up a system. They will take a description that you write, called a manifest for puppet and a recipe for chef, and apply changes to a system to make it fit that description. The end result is a reproducible, and therefore disposable, system that can be used for testing a software change.</p>
+<p>Unfortunately on a legacy system such as RedHatES-4 the requirements to run puppet out of the box are not met. Fortunately there is not much that needs to be done to set puppet up, and it can easily be accomplished in a kickstart.</p>
+<h3>The set up</h3>
+<p>In order to run puppet on any system you need Ruby 1.8.5 or 1.8.7 and rubygems. I chose 1.8.7 for performance improvements, and it's compatibility with puppet and chef. In order to build ruby you will need to manually build autconf 2.60 as CentOS 4.8 ships with autoconf 2.59 which won't work. You will also need to make sure that the following packages are installed in your kickstart environment.</p>
+<ul><li>automake</li>
+<li>gcc</li>
+<li>cpp</li>
+<li>glibc-devel</li>
+<li>glibc-headers</li>
+<li>glibc-kernheaders</li>
+<li>glibc</li>
+<li>glibc-common</li>
+<li>libgcc</li>
+<li>zlib-devel</li>
+<li>openssl-devel</li>
+<li>readline-devel</li>
+</ul><h3>The kickstart</h3>
+<p>This kickstart can be used with CentOS 4 or RedHat 4. It will install a 'minimal system' and the packages required to build Ruby and rubygems. In the <code>%post</code> install section it will download and build autoconf, ruby-1.8.7 and rubygems-1.8.10 then use <code>gem install puppet</code> to install puppet.</p>
+<div class="code"><pre><span class="c"># Kickstart file for Puppet on CentOS 4/RedHat ES-4</span>
+<span class="c"># Tested on ES-4 U8 / CentOS 4.8</span>
+<span class="c"># May work on older enterprise 4 systems.</span>
+<span class="c">#</span>
+<span class="c"># May 5, 2012</span>
+<span class="c"># Adam Reid</span>
+
+install
+cdrom
+lang en_US.UTF-8
+langsupport --default<span class="o">=</span>en_US.UTF-8 en_US.UTF-8
+keyboard us
+xconfig --card <span class="s2">"VESA driver (generic)"</span> --videoram 12288 --hsync 31.5-37.9 --vsync 50-70 <span class="se">\</span>
+    --resolution 800x600 --depth 16
+network --device eth0 --bootproto dhcp
+<span class="c"># Password = password</span>
+rootpw --iscrypted <span class="nv">$1$7nqqHQSF$/</span>32jwOnJCOiDivVV7o0iw/
+firewall --disabled
+selinux --disabled
+authconfig --enableshadow --passalgo<span class="o">=</span>md5
+timezone --utc America/New_York
+bootloader --location<span class="o">=</span>mbr
+<span class="c"># The following is the partition information you requested</span>
+<span class="c"># Note that any partitions you deleted are not expressed</span>
+<span class="c"># here so unless you clear all partitions first, this is</span>
+<span class="c"># not guaranteed to work</span>
+clearpart --linux --drives<span class="o">=</span>sda
+part /boot --fstype ext3 --size<span class="o">=</span>100 --ondisk<span class="o">=</span>sda
+part pv.2 --size<span class="o">=</span>0 --grow --ondisk<span class="o">=</span>sda
+volgroup VolGroup00 --pesize<span class="o">=</span>32768 pv.2
+logvol swap --fstype swap --name<span class="o">=</span>LogVol01 --vgname<span class="o">=</span>VolGroup00 --size<span class="o">=</span>512 --grow --maxsize<span class="o">=</span>1024
+logvol / --fstype ext3 --name<span class="o">=</span>LogVol00 --vgname<span class="o">=</span>VolGroup00 --size<span class="o">=</span>1024 --grow
+
+%packages
+lvm2
+kernel
+e2fsprogs
+grub
+
+<span class="c"># required to build ruby</span>
+<span class="c"># should be kept for gems that build native extensions.</span>
+automake
+gcc
+cpp
+glibc-devel
+glibc-headers
+glibc-kernheaders
+glibc
+glibc-common
+libgcc
+
+<span class="c"># required to build ruby bindings, can be removed after</span>
+zlib-devel
+openssl-devel
+readline-devel
+
+%post --log<span class="o">=</span>/root/ks-post.log
+<span class="c"># Change to a vt to see progress</span>
+chvt 3
+
+<span class="c"># redirect output to ks-post.log including stdout and stderr</span>
+<span class="o">(</span>
+    <span class="c"># Keep it clean</span>
+    mkdir /tmp/ruby
+    <span class="nb">cd</span> /tmp/ruby
+
+    <span class="c"># autoconf 2.60 is required to build ruby</span>
+    wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.60.tar.gz
+    tar -xzf autoconf-2.60.tar.gz
+    <span class="nb">cd </span>autoconf-2.60
+    ./configure --prefix<span class="o">=</span>/usr <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
+    <span class="nb">cd</span> /tmp/ruby
+
+    <span class="c"># build ruby-1.8.7-p358</span>
+    wget http://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p358.tar.bz2
+    tar -xjf ruby-1.8.7-p358.tar.bz2
+    <span class="nb">cd </span>ruby-1.8.7-p358
+    autoconf
+    ./configure --prefix<span class="o">=</span>/usr <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
+    <span class="nb">cd</span> /tmp/ruby
+
+    <span class="c"># install ruby-gems 1.8.10</span>
+    wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.10.tgz
+    tar -xzf rubygems-1.8.10.tgz
+    <span class="nb">cd </span>rubygems-1.8.10
+    /usr/bin/ruby setup.rb
+
+    <span class="c"># clean up</span>
+    <span class="nb">cd</span> /
+    rm -rf /tmp/ruby
+
+    <span class="c"># install puppet</span>
+    gem install puppet
+<span class="o">)</span> 2&gt;&amp;1 | tee &gt; /root/ks-post.log
+
+<span class="c"># switch back to gui</span>
+chvt 7
+</pre></div>
+
+
+<p>And that's it. That's enough to get you a puppet client system on RedHat ES-4 U8 or CentoOS 4.8. In a later post I will review how to create a <a href="http://vagrantup.com">Vagrant</a> image to test your puppet manifests with.</p>
+            
+    <p>
+
+        </p></div>
+    
+<div>
+<ul class="pager"></ul></div>
+
+    
+
+    
+
+
+    </div>
+    </div>
+    <!--End of body content-->
+</div>
+<div class="footerbox">
+    Contents © 2013 <a href="mailto:adam@adamreid.ca">Adam Reid</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>
+</div>
+
+
+
+            <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script><script src="assets/js/bootstrap.min.js" type="text/javascript"></script><script src="assets/js/jquery.colorbox-min.js" type="text/javascript"></script><script src="assets/js/slides.min.jquery.js" type="text/javascript"></script><script type="text/javascript">jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"80%",maxHeight:"80%",scalePhotos:true});</script></body></html>
