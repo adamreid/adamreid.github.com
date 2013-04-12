@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>adamreid.ca (puppet centos)</title><link>http://adamreid.ca</link><description>Sporratic updates from Adam</description><lastBuildDate>Thu, 11 Apr 2013 21:58:10 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Kickstarting Puppet on CentOS 4 / ES-4</title><link>http://adamreid.ca/posts/Kickstarting-Puppet-On-Centos4.html</link><description>&lt;html&gt;&lt;body&gt;&lt;p&gt;This is a short post on how I got &lt;a href="http://puppetlabs.com"&gt;Puppet&lt;/a&gt; working on &lt;a href="http://www.centos.org"&gt;CentOS&lt;/a&gt; 4.8. Why would I want to do such a thing when there are pre-packaged RPMs available for Centos 5 or 6? Well the company I work for has a massive number of &lt;a href="http://www.redhat.com"&gt;RedHat&lt;/a&gt; ES-4 U8 (RedHat ES-4 U8 ~ CentOS 4.8) systems deployed all over the world. I work as part of the "Software Build and Configuration" team and we are responsible for setting up systems for QA. Since we use ES-4U8 in production, we must use the same release in QA.&lt;/p&gt;
+&lt;p&gt;One of the goals I've set for myself in my job is to make these QA systems disposable. When QA test these systems they sometimes require specific configuration or data changes to make sure feature X is working and doesn't break feature Y. You can't very well dispose of a system that takes you 1 or 2 days to manually configure, and that's where puppet comes in.&lt;/p&gt;
+&lt;p&gt;Puppet (and Chef) allow you to describe the packages, attributes, and configurations that make up a system. They will take a description that you write, called a manifest for puppet and a recipe for chef, and apply changes to a system to make it fit that description. The end result is a reproducible, and therefore disposable, system that can be used for testing a software change.&lt;/p&gt;
+&lt;p&gt;Unfortunately on a legacy system such as RedHatES-4 the requirements to run puppet out of the box are not met. Fortunately there is not much that needs to be done to set puppet up, and it can easily be accomplished in a kickstart.&lt;/p&gt;
+&lt;h3&gt;The set up&lt;/h3&gt;
+&lt;p&gt;In order to run puppet on any system you need Ruby 1.8.5 or 1.8.7 and rubygems. I chose 1.8.7 for performance improvements, and it's compatibility with puppet and chef. In order to build ruby you will need to manually build autconf 2.60 as CentOS 4.8 ships with autoconf 2.59 which won't work. You will also need to make sure that the following packages are installed in your kickstart environment.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;automake&lt;/li&gt;
+&lt;li&gt;gcc&lt;/li&gt;
+&lt;li&gt;cpp&lt;/li&gt;
+&lt;li&gt;glibc-devel&lt;/li&gt;
+&lt;li&gt;glibc-headers&lt;/li&gt;
+&lt;li&gt;glibc-kernheaders&lt;/li&gt;
+&lt;li&gt;glibc&lt;/li&gt;
+&lt;li&gt;glibc-common&lt;/li&gt;
+&lt;li&gt;libgcc&lt;/li&gt;
+&lt;li&gt;zlib-devel&lt;/li&gt;
+&lt;li&gt;openssl-devel&lt;/li&gt;
+&lt;li&gt;readline-devel&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;The kickstart&lt;/h3&gt;
+&lt;p&gt;This kickstart can be used with CentOS 4 or RedHat 4. It will install a 'minimal system' and the packages required to build Ruby and rubygems. In the &lt;code&gt;%post&lt;/code&gt; install section it will download and build autoconf, ruby-1.8.7 and rubygems-1.8.10 then use &lt;code&gt;gem install puppet&lt;/code&gt; to install puppet.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Kickstart file for Puppet on CentOS 4/RedHat ES-4&lt;/span&gt;
+&lt;span class="c"&gt;# Tested on ES-4 U8 / CentOS 4.8&lt;/span&gt;
+&lt;span class="c"&gt;# May work on older enterprise 4 systems.&lt;/span&gt;
+&lt;span class="c"&gt;#&lt;/span&gt;
+&lt;span class="c"&gt;# May 5, 2012&lt;/span&gt;
+&lt;span class="c"&gt;# Adam Reid&lt;/span&gt;
+
+install
+cdrom
+lang en_US.UTF-8
+langsupport --default&lt;span class="o"&gt;=&lt;/span&gt;en_US.UTF-8 en_US.UTF-8
+keyboard us
+xconfig --card &lt;span class="s2"&gt;"VESA driver (generic)"&lt;/span&gt; --videoram 12288 --hsync 31.5-37.9 --vsync 50-70 &lt;span class="se"&gt;\&lt;/span&gt;
+    --resolution 800x600 --depth 16
+network --device eth0 --bootproto dhcp
+&lt;span class="c"&gt;# Password = password&lt;/span&gt;
+rootpw --iscrypted &lt;span class="nv"&gt;$1$7nqqHQSF$/&lt;/span&gt;32jwOnJCOiDivVV7o0iw/
+firewall --disabled
+selinux --disabled
+authconfig --enableshadow --passalgo&lt;span class="o"&gt;=&lt;/span&gt;md5
+timezone --utc America/New_York
+bootloader --location&lt;span class="o"&gt;=&lt;/span&gt;mbr
+&lt;span class="c"&gt;# The following is the partition information you requested&lt;/span&gt;
+&lt;span class="c"&gt;# Note that any partitions you deleted are not expressed&lt;/span&gt;
+&lt;span class="c"&gt;# here so unless you clear all partitions first, this is&lt;/span&gt;
+&lt;span class="c"&gt;# not guaranteed to work&lt;/span&gt;
+clearpart --linux --drives&lt;span class="o"&gt;=&lt;/span&gt;sda
+part /boot --fstype ext3 --size&lt;span class="o"&gt;=&lt;/span&gt;100 --ondisk&lt;span class="o"&gt;=&lt;/span&gt;sda
+part pv.2 --size&lt;span class="o"&gt;=&lt;/span&gt;0 --grow --ondisk&lt;span class="o"&gt;=&lt;/span&gt;sda
+volgroup VolGroup00 --pesize&lt;span class="o"&gt;=&lt;/span&gt;32768 pv.2
+logvol swap --fstype swap --name&lt;span class="o"&gt;=&lt;/span&gt;LogVol01 --vgname&lt;span class="o"&gt;=&lt;/span&gt;VolGroup00 --size&lt;span class="o"&gt;=&lt;/span&gt;512 --grow --maxsize&lt;span class="o"&gt;=&lt;/span&gt;1024
+logvol / --fstype ext3 --name&lt;span class="o"&gt;=&lt;/span&gt;LogVol00 --vgname&lt;span class="o"&gt;=&lt;/span&gt;VolGroup00 --size&lt;span class="o"&gt;=&lt;/span&gt;1024 --grow
+
+%packages
+lvm2
+kernel
+e2fsprogs
+grub
+
+&lt;span class="c"&gt;# required to build ruby&lt;/span&gt;
+&lt;span class="c"&gt;# should be kept for gems that build native extensions.&lt;/span&gt;
+automake
+gcc
+cpp
+glibc-devel
+glibc-headers
+glibc-kernheaders
+glibc
+glibc-common
+libgcc
+
+&lt;span class="c"&gt;# required to build ruby bindings, can be removed after&lt;/span&gt;
+zlib-devel
+openssl-devel
+readline-devel
+
+%post --log&lt;span class="o"&gt;=&lt;/span&gt;/root/ks-post.log
+&lt;span class="c"&gt;# Change to a vt to see progress&lt;/span&gt;
+chvt 3
+
+&lt;span class="c"&gt;# redirect output to ks-post.log including stdout and stderr&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;
+    &lt;span class="c"&gt;# Keep it clean&lt;/span&gt;
+    mkdir /tmp/ruby
+    &lt;span class="nb"&gt;cd&lt;/span&gt; /tmp/ruby
+
+    &lt;span class="c"&gt;# autoconf 2.60 is required to build ruby&lt;/span&gt;
+    wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.60.tar.gz
+    tar -xzf autoconf-2.60.tar.gz
+    &lt;span class="nb"&gt;cd &lt;/span&gt;autoconf-2.60
+    ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+    &lt;span class="nb"&gt;cd&lt;/span&gt; /tmp/ruby
+
+    &lt;span class="c"&gt;# build ruby-1.8.7-p358&lt;/span&gt;
+    wget http://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p358.tar.bz2
+    tar -xjf ruby-1.8.7-p358.tar.bz2
+    &lt;span class="nb"&gt;cd &lt;/span&gt;ruby-1.8.7-p358
+    autoconf
+    ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+    &lt;span class="nb"&gt;cd&lt;/span&gt; /tmp/ruby
+
+    &lt;span class="c"&gt;# install ruby-gems 1.8.10&lt;/span&gt;
+    wget http://production.cf.rubygems.org/rubygems/rubygems-1.8.10.tgz
+    tar -xzf rubygems-1.8.10.tgz
+    &lt;span class="nb"&gt;cd &lt;/span&gt;rubygems-1.8.10
+    /usr/bin/ruby setup.rb
+
+    &lt;span class="c"&gt;# clean up&lt;/span&gt;
+    &lt;span class="nb"&gt;cd&lt;/span&gt; /
+    rm -rf /tmp/ruby
+
+    &lt;span class="c"&gt;# install puppet&lt;/span&gt;
+    gem install puppet
+&lt;span class="o"&gt;)&lt;/span&gt; 2&amp;gt;&amp;amp;1 | tee &amp;gt; /root/ks-post.log
+
+&lt;span class="c"&gt;# switch back to gui&lt;/span&gt;
+chvt 7
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And that's it. That's enough to get you a puppet client system on RedHat ES-4 U8 or CentoOS 4.8. In a later post I will review how to create a &lt;a href="http://vagrantup.com"&gt;Vagrant&lt;/a&gt; image to test your puppet manifests with.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description><guid>http://adamreid.ca/posts/Kickstarting-Puppet-On-Centos4.html</guid><pubDate>Tue, 15 May 2012 00:00:00 GMT</pubDate></item></channel></rss>
